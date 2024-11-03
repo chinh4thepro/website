@@ -1,0 +1,17 @@
+---
+import { NAME } from '../global'
+
+import Link from './link.astro'
+---
+
+<header>
+    <nav class="pt-16 pl-16 pr-16 lg:pl-32 lg:pr-32 xl:pl-48 xl:pr-48 2xl:pl-80 2xl:pr-80 3xl:pl-112 3xl:pr-112 4xl:pl-144 4xl:pr-144 flex justify-between">
+        <h1><a href="/">{NAME}</a></h2>
+        <div>
+            <Link href="/">home</Link>
+            <Link href="/blog">blog</Link>
+            <Link href="/projects">projects</Link>
+            <Link href="/about">about</Link>
+        </div>
+    </nav>
+</header>
