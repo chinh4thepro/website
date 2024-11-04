@@ -5,13 +5,26 @@ import Link from './link.astro'
 ---
 
 <header>
-    <nav class="pt-16 pl-16 pr-16 lg:pl-32 lg:pr-32 xl:pl-48 xl:pr-48 2xl:pl-80 2xl:pr-80 3xl:pl-112 3xl:pr-112 4xl:pl-144 4xl:pr-144 flex justify-between">
+    <nav class="fixed w-full backdrop-blur-md pt-16 pl-16 pr-16 lg:pl-32 lg:pr-32 xl:pl-48 xl:pr-48 2xl:pl-80 2xl:pr-80 3xl:pl-112 3xl:pr-112 4xl:pl-144 4xl:pr-144 flex justify-between">
         <h1><a href="/">{NAME}</a></h2>
         <div>
-            <Link href="/">home</Link>
-            <Link href="/blog">blog</Link>
-            <Link href="/projects">projects</Link>
-            <Link href="/about">about</Link>
+            <button class="sm:hidden">=</button>
+            <div :class="{'hidden':!navbarOpen, 'flex':navbarOpen}">
+                <ul class="flex flex-col sm:flex-row sm:space-x-5">
+                    <li>
+                        <Link href="/">home</Link>
+                    </li>
+                    <li>
+                        <Link href="/blog">blog</Link>
+                    </li>
+                    <li>
+                        <Link href="/projects">projects</Link>
+                    </li>
+                    <li>
+                        <Link href="/about">about</Link>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 </header>
